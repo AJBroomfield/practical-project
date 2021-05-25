@@ -1,0 +1,6 @@
+flask
+flask-testing
+pytest
+pytest-cov
+requests
+Werkzeug==2.0
