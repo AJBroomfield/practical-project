@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, request, jsonify
 import random
 
 app = Flask(__name__)
@@ -56,9 +56,12 @@ def stat_roller(role,race):
 
 @app.route('/get_stats', methods=['POST'])
 def get_stats():
-    role=request.data.decode('utf-8')[0]
-    race=request.data.decode('utf-8')[1]
+    data=request.get_json()
+    
+    role=data["role"]
+    race=data["race"]
     return stat_roller(role,race)
+    
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000, debug=True)
