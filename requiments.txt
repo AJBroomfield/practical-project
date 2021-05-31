@@ -4,3 +4,5 @@ pytest
 pytest-cov
 requests
 Werkzeug==2.0
+pymysql
+Flask-sqlalchemy
