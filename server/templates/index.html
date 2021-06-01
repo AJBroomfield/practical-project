@@ -9,7 +9,24 @@
             Random DnD Character Roller
         </h1>
         <p>
-            You are a {{race}} {{role}} with {{stats}}
+            You are a {{race}} {{role}} <br><br>
+            Strength = {{stats.STR}}<br>
+            Dexterity = {{stats.DEX}}<br>
+            Constiution = {{stats.CON}}<br>
+            Intelligence = {{stats.INT}}<br>
+            Wisdom = {{stats.WIS}}<br>
+            Charisma = {{stats.CHA}}
+        </p>
+
+        <h2>
+            Last five characters created
+        </h2>
+        <p>
+            {% for player in groupstat %}
+            You are a {{player.race}} {{player.role}} with STR: {{player.strength}}, DEX: {{player.dexterity}}, 
+                CON: {{player.constitution}}, INT: {{player.intelligence}}, WIS: {{player.wisdom}}, CHA: {{player.charisma}}
+            <br>
+            {% endfor %}
         </p>
     </body>
 </html>

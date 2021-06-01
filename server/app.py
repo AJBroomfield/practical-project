@@ -1,12 +1,12 @@
 from flask import Flask, render_template, jsonify
 from flask_sqlalchemy import SQLAlchemy
+from sqlalchemy import desc
 import requests
-from os import getenv
-
+import os
 
 app = Flask(__name__)
 
-app.config['SQLALCHEMY_DATABASE_URI']= genenv('DATABASE_URI')
+app.config['SQLALCHEMY_DATABASE_URI']= os.getenv('DATABASE_URI')
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS']=True 
 
 db = SQLAlchemy(app)
@@ -46,7 +46,9 @@ def home():
     db.session.add(db_info)
     db.session.commit()
     
-    return render_template('index.html', role=role.text, race=race.text, stats=statinfo)
+    groupstat = PlayerInfo.query.order_by(desc(PlayerInfo.id)).limit(5).all()
+
+    return render_template('index.html', role=role.text, race=race.text, stats=statinfo, groupstat=groupstat)
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000, debug=True)
