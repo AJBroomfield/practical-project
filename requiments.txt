@@ -6,3 +6,4 @@ requests
 Werkzeug==2.0
 pymysql
 Flask-sqlalchemy
+requests_mock
