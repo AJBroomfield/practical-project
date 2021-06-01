@@ -1,6 +1,6 @@
 version: "3.8"
 services:
-  service1:
+  server:
     image: abroomfield/server
     build: ./server
     environment: 
@@ -10,17 +10,17 @@ services:
       published: 5000
       protocol: tcp
     depends_on:
-    - "service4"
-  service2:
+    - "stat_api"
+  class_api:
     image: abroomfield/class-api
     build: ./class-api
-  service3:
+  race_api:
     image: abroomfield/race-api
     build: ./race-api
     depends_on:
-    - "service2"
-  service4:
+    - "class_api"
+  stat_api:
     image: abroomfield/stat-api
     build: ./stat-api
     depends_on:
-    - "service3"
+    - "race_api"
