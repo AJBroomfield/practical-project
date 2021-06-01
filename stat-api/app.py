@@ -60,7 +60,7 @@ def get_stats():
     
     role=data["role"]
     race=data["race"]
-    return stat_roller(role,race)
+    return jsonify(stat_roller(role,race))
     
 
 if __name__ == "__main__":
