@@ -9,7 +9,7 @@ source venv/bin/activate
 pip3 install -r requirements.txt
 
 #Pytests
-python3 -m pytest class-api --cov=app --junitxml=junit/test-results.xml --cov-report.xml
-python3 -m pytest race-api --cov=app --junitxml=junit/test-results.xml --cov-report.xml 
-python3 -m pytest stat-api --cov=app --junitxml=junit/test-results.xml --cov-report.xml
-python3 -m pytest server --cov=app --junitxml=junit/test-results.xml --cov-report.xml
+python3 -m pytest class-api --cov=app --junitxml=junit/test-results.xml --cov-report=xml
+python3 -m pytest race-api --cov=app --junitxml=junit/test-results.xml --cov-report=xml 
+python3 -m pytest stat-api --cov=app --junitxml=junit/test-results.xml --cov-report=xml
+python3 -m pytest server --cov=app --junitxml=junit/test-results.xml --cov-report=xml
