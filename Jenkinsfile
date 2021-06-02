@@ -35,4 +35,9 @@ pipeline {
             
         }
     }
+    post{
+        always{
+            perfReport filterRegex: '', showTrendGraphs: true, sourceDataFiles: '**/*.xml'
+        }
+    }
 }
