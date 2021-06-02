@@ -2,7 +2,7 @@ pipeline {
     agent any
     environment{
         DATABASE_URI = credentials('DATABASE_URI')
-        DOCKER_LOGIN = crednetials('DOCKER_LOGIN')
+        DOCKER_LOGIN = credentials('DOCKER_LOGIN')
     }
     stages{
         stage('Testing') {
