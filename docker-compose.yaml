@@ -1,0 +1,26 @@
+version: "3.8"
+services:
+  server:
+    image: abroomfield/server
+    build: ./server
+    environment: 
+      DATABASE_URI: ${DATABASE_URI}
+    ports:
+    - target: 5000
+      published: 5000
+      protocol: tcp
+    depends_on:
+    - "stat_api"
+  class_api:
+    image: abroomfield/class-api
+    build: ./class-api
+  race_api:
+    image: abroomfield/race-api
+    build: ./race-api
+    depends_on:
+    - "class_api"
+  stat_api:
+    image: abroomfield/stat-api
+    build: ./stat-api
+    depends_on:
+    - "race_api"
