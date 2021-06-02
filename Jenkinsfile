@@ -6,22 +6,31 @@ pipeline {
     }
     stages{
         stage('Testing') {
-            sh 'bash scripts/testing.sh'
-
+            steps {
+                sh 'bash scripts/testing.sh'
+            }
         }
+
         stage('Docker Install') {
-            sh 'bash scripts/installdocker.sh'
-            
+            steps { 
+                sh 'bash scripts/installdocker.sh'
+            }
         }
         stage('Docker Compose Build') {
-            sh 'docker-compose build'
-            
+            steps {
+                sh 'docker-compose build'
+            }  
         }
         stage('Docker Compose Push') {
-            sh 'docker-compose push'
+            steps {
+                sh 'docker-compose push'
+            }            
         }
         stage('Docker Compose Up') {
-            sh 'docker-compose up'
+            steps {
+                sh 'docker-compose up'
+            }
+            
 
             
         }
