@@ -11,6 +11,12 @@ pipeline {
             }
         }
 
+        stage('Ansible') {
+            steps {
+                sh 'bash ansible-playbook -i inventory.yaml playbook.yaml'
+            }
+        }
+
         stage('Docker Install') {
             steps { 
                 sh 'bash scripts/installdocker.sh'
@@ -28,7 +34,7 @@ pipeline {
         }
         stage('Docker Compose Up') {
             steps {
-                sh 'docker-compose up -d'
+                sh 'bash scripts/deploy/sh'
             }
             
 
