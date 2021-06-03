@@ -13,7 +13,7 @@ pipeline {
 
         stage('Ansible') {
             steps {
-                sh 'bash ansible-playbook -i inventory.yaml playbook.yaml'
+                sh 'bash scripts/ansible.sh'
             }
         }
 
@@ -34,7 +34,7 @@ pipeline {
         }
         stage('Docker Compose Up') {
             steps {
-                sh 'bash scripts/deploy/sh'
+                sh 'bash scripts/deploy.sh'
             }
             
 
