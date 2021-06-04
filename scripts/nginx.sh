@@ -2,6 +2,8 @@
 
 ssh nginx << EOF
 
+rm -rf practical-project/
+
 git clone https://github.com/AJBroomfield/practical-project.git
 
 cd practical-project
