@@ -1,18 +1,20 @@
 #!/bin/bash
 
-ssh host-1 << EOF
+ssh nginx << EOF
+
+rm -rf practical-project/
 
 git clone https://github.com/AJBroomfield/practical-project.git
 
 cd practical-project
 
-git checkout feat_nginx 
-
-export DATABASE_URI=${DATABASE_URI}
+git checkout feat_nginx
 
 sudo groupadd docker
 sudo usermod -aG docker ${USER}
 
-docker stack deploy --compose-file docker-compose.yaml app
+cd nginx
+
+docker-compose up -d
 
 EOF

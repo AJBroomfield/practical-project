@@ -36,9 +36,11 @@ pipeline {
             steps {
                 sh 'bash scripts/deploy.sh'
             }
-            
-
-            
+        }
+        stage('Start Nginx') {
+            steps {
+                sh 'bash scripts/nginx.sh'
+            }
         }
     }
     post{
