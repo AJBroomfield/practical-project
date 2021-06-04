@@ -6,7 +6,7 @@ git clone https://github.com/AJBroomfield/practical-project.git
 
 cd practical-project
 
-git checkout feat_ansible 
+git checkout feat_nginx 
 
 export DATABASE_URI=${DATABASE_URI}
 
