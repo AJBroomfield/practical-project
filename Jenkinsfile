@@ -32,7 +32,7 @@ pipeline {
                 sh 'docker-compose push'
             }            
         }
-        stage('Docker Compose Up') {
+        stage('Docker Swarm Deploy') {
             steps {
                 sh 'bash scripts/deploy.sh'
             }
