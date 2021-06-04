@@ -39,7 +39,7 @@ pipeline {
         
         stage('Start Nginx') {
             steps {
-                'bash scripts/nginx.sh'
+                sh 'bash scripts/nginx.sh'
             }
         }
             
