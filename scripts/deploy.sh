@@ -2,11 +2,11 @@
 
 ssh host-1 << EOF
 
+rm -rf practical-project
+
 git clone https://github.com/AJBroomfield/practical-project.git
 
-cd practical-project
-
-git checkout feat_nginx 
+cd practical-project 
 
 export DATABASE_URI=${DATABASE_URI}
 
