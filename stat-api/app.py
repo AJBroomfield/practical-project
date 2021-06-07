@@ -8,8 +8,8 @@ def stat_roller(role,race):
     for i in range(6):
         stat = []
         for i in range(4):
-            stat.append(random.randint(1,6))
-            #stat.append(random.randint(20,50))
+            #stat.append(random.randint(1,6))
+            stat.append(random.randint(20,50))
         stat.remove(min(stat))
         stats.append(sum(stat))
  
